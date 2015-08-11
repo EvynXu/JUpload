@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>single demo</title>
+	<script type="text/javascript" src="http://commonlibs.oss-cn-hangzhou.aliyuncs.com/jquery%2Fjquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="jupload.js"></script>
+
+	
+</head>
+<body>
+	
+	<div style="text-align: center;color:white;padding:30px 20px;background-color:orange;font-size:20px" id="demo">
+		click me select file
+	</div>
+	<div id="progress">
+		
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+		window.up = new JUpload('#demo',{
+			postUrl: "http://service.noahstrade.com/fileuploaderservice/file/UploadImageFile?storage=testweixin&module=test_upload&parameters=120x120",
+			onClientLoad:function(e,file,fr){
+				var img = document.createElement('img');
+				img.src= fr.result;
+				img.style.cssText = "width:100px;"
+				document.body.appendChild(img);
+			},
+			onServerProgress:function(e){
+				var totalSize = e.total;
+				var current = e.loaded;
+				$('#progress').html("onServerProgress:<br/>-TotalSize:" + totalSize + "<br/>-currentSize:" + current);
+			},
+			onSuccess: function (e, file, responseText) {
+				var div = document.createElement('div');
+				div.innerHTML = "returnText = " + responseText;
+				document.body.appendChild(div);
+			}
+		})
+</script>
