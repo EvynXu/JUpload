@@ -1,7 +1,6 @@
 (function() {
-	var that;
 	var model = function(el, options) {
-		that = this;
+		var that = this;
 		that.$el = document.querySelector(el);
 		that.settings = {
 			"maxSize": "",
@@ -71,6 +70,7 @@
 
 	model.prototype = {
 		fileHandler: function(file) {
+			var that = this;
 			if (that.settings.maxSize != '' && file.size > that.settings.maxSize) {
 				var obj = {
 					code: 4001,
