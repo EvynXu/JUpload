@@ -1,4 +1,5 @@
 (function() {
+	//jupload 1.0
 	var model = function(el, options) {
 		//测试分支合并 冲突解决
 		var that = this;
