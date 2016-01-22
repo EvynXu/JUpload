@@ -12,7 +12,7 @@
 		that.settings = {
 			"maxSize": "",
 			"name": "uploadFileName",
-
+			"data":{},
 			/**
 			 * 文件筛选
 			 * audio/* 可以接受所有的音频文件
@@ -124,6 +124,9 @@
 			xmlHttpRequest.open("POST", url, true);
 
 			var formData = new FormData();
+			for(var key in that.settings.data){
+				formData.append(key, that.settings.data[key]);
+			}
 			formData.append(that.settings.name, file);
 			xmlHttpRequest.send(formData);
 		}
