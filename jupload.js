@@ -48,13 +48,10 @@
 			that.settings[key] = options[key];
 		}
 
-		that.$el.style.cssText = "position:relative;";
-
 		var input = document.createElement("input");
-		input.id = "__upload_input__";
 		input.type = "file";
 		input.accept = that.settings.accept;
-		input.style.cssText = "position:absolute;left:-10000px;top:-10000px;";
+        	input.style.display = 'none';
 
 		that.$el.appendChild(input);
 
