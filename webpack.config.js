@@ -27,7 +27,15 @@ var config = {
   resolve: {
     root: path.resolve('./src'),
     extensions: ['', '.js']
-  }
+  },
+  plugins:[
+      new webpack.optimize.UglifyJsPlugin({
+         compress: {
+             warnings: false
+         }
+      }),
+      new webpack.NoErrorsPlugin(),
+  ]
 };
 
 module.exports = config;
