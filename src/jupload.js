@@ -5,6 +5,7 @@ export default class JUpload{
 		that.$el = typeof el == 'string' ? document.querySelector(el) : el;
 		that.settings = {
 			maxSize: "",
+			data:{},
 			name: "uploadFileName",
 
 			/**
@@ -110,6 +111,9 @@ export default class JUpload{
 			xmlHttpRequest.open("POST", url, true);
 
 			var formData = new FormData();
+			for(var key in that.settings.data){
+ 				formData.append(key, that.settings.data[key]);
+ 			}
 			formData.append(that.settings.name, file);
 			xmlHttpRequest.send(formData);
 		}
