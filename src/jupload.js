@@ -2,7 +2,7 @@ export default class JUpload{
 	constructor(el,options){
 		//测试分支合并 冲突解决
 		let that = this;
-		that.$el = document.querySelector(el);
+		that.$el = typeof el == 'string' ? document.querySelector(el) : el;
 		that.settings = {
 			maxSize: "",
 			name: "uploadFileName",
