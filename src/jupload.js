@@ -80,7 +80,7 @@ export default class JUpload{
 				var fileReader = new FileReader();
 				fileReader.onload = e => {
 					if (that.settings.onClientLoad) {
-						that.settings.onClientLoad(e, file, this);
+						that.settings.onClientLoad(e, file, fileReader);
 					}
 				};
 				fileReader.readAsDataURL(file);

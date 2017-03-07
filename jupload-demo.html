@@ -19,6 +19,7 @@
 			postUrl: "your server path",
 			onClientLoad:function(e,file,fr){
 				var img = document.createElement('img');
+				alert(JSON.stringify(file));
 				img.src= fr.result;
 				img.style.cssText = "width:100px;"
 				document.body.appendChild(img);
@@ -26,7 +27,7 @@
 			onServerProgress:function(e){
 				var totalSize = e.total;
 				var current = e.loaded;
-				$('#progress').html("onServerProgress:<br/>-TotalSize:" + totalSize + "<br/>-currentSize:" + current);
+				document.getElementById('progress').innerHTML = "onServerProgress:<br/>-TotalSize:" + totalSize + "<br/>-currentSize:" + current
 			},
 			onSuccess: function (e, file, responseText) {
 				var div = document.createElement('div');

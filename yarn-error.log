@@ -1,0 +1,56 @@
+Arguments: 
+  /usr/local/Cellar/node/7.6.0/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/aria2/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
+
+Yarn version: 
+  0.18.1
+
+Node version: 
+  7.6.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "jupload",
+    "version": "1.0.0",
+    "description": "This is an upload script library on mobile devices.Welcome everyone to use, as well as various proposals.",
+    "main": "jupload.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/EvynXu/JUpload.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/EvynXu/JUpload/issues"
+    },
+    "homepage": "https://github.com/EvynXu/JUpload#readme",
+    "devDependencies": {
+      "babel": "^6.3.26",
+      "babel-core": "^6.4.5",
+      "babel-loader": "^6.2.1",
+      "babel-plugin-add-module-exports": "^0.1.2",
+      "babel-preset-es2015": "^6.3.13",
+      "babel-preset-react": "^6.3.13",
+      "webpack": "^1.12.12",
+      "webpack-dev-server": "^1.14.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: read ETIMEDOUT
+      at exports._errnoException (util.js:1028:11)
+      at TLSWrap.onread (net.js:572:26)
